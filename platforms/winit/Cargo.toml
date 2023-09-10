@@ -20,7 +20,9 @@ tokio = ["accesskit_unix/tokio"]
 
 [dependencies]
 accesskit = { version = "0.11.2", path = "../../common" }
-winit = { version = "0.28", default-features = false }
+#winit = { version = "0.28", default-features = false }
+winit = { git = "https://github.com/Riateche/winit.git", branch = "fix-wait-until", default-features = false }
+raw-window-handle = "0.5"
 
 [target.'cfg(target_os = "windows")'.dependencies]
 accesskit_windows = { version = "0.14.3", path = "../windows" }
@@ -32,4 +34,5 @@ accesskit_macos = { version = "0.9.0", path = "../macos" }
 accesskit_unix = { version = "0.5.2", path = "../unix", optional = true, default-features = false }
 
 [dev-dependencies]
-winit = "0.28"
+#winit = "0.28"
+winit = { git = "https://github.com/Riateche/winit.git", branch = "fix-wait-until" }
